@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+      <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dealership Review</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -15,10 +19,85 @@
 
     <body>
     <!-- Remove this line the first time you edit this file -->
-     This is the index page of your Django app!
+<!--     This is the index page of your Django app!-->
     <!--Add a nav bar here -->
+    <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="http://127.0.0.1:8000/djangoapp/">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="http://127.0.0.1:8000/djangoapp/about">About Us</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="http://127.0.0.1:8000/djangoapp/contact">Contact Us</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">User</a>
+  </li>
+</ul>
 
     <!--Add a dealer table here -->
+
+    <div class="container-fluid">
+            <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+<!--    Footer-->
+    <footer>
+        <div class="container-fluid">
+            <div>
+            <h4>Made by Wisdom</h4>
+            </div>
+        <div>
+
+                    <ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="http://127.0.0.1:8000/djangoapp/about">About Us</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="http://127.0.0.1:8000/djangoapp/contact">Contact Us</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">User</a>
+  </li>
+</ul>
+
+        </div>
+        </div>
+    </footer>
 
     </body>
 
