@@ -3,6 +3,8 @@
 <head>
       <meta charset="UTF-8">
     {% load static %}
+<!--    Css File-->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -21,22 +23,72 @@
     <!-- Remove this line the first time you edit this file -->
 <!--     This is the index page of your Django app!-->
     <!--Add a nav bar here -->
-    <ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="http://127.0.0.1:8000/djangoapp/">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="http://127.0.0.1:8000/djangoapp/about">About Us</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="http://127.0.0.1:8000/djangoapp/contact">Contact Us</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">User</a>
-  </li>
-</ul>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Dealership Review</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://127.0.0.1:8000/djangoapp/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:8000/djangoapp/about">About Us</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="http://127.0.0.1:8000/djangoapp/contact">Contact Us</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+
+      {% if user.is_authenticated %}
+    <div class="rightalign d-flex">
+           <div class="dropdown d-flex">
+               <button class="dropbtn btn-danger my-2 my-sm-0">{{user.username}}</button>
+               <div class="dropdown-content p-2">
+                    <a href="{% url 'djangoapp:logout' %}">Logout</a>
+               </div>
+           </div>
+    </div>
+        {% else %}
+
+        <div class="rightalign d-flex">
+        <div class="dropdown d-flex flex-row">
+            <button class="dropbtn p-2">Visitor</button>
+            <div class="dropdown-content">
+                <a href="{% url 'djangoapp:login' %}" class="p-2">Login</a>
+                <a href="{% url 'djangoapp:registration' %}" class="p-2">Signup</a>
+            </div>
+        </div>
+    </div>
+
+        {% endif %}
+
+  </div>
+
+
+</nav>
+
+    <br>
+    <br>
+    <br>
 
     <!--Add a dealer table here -->
+
+    <h1></h1>
 
     <div class="container-fluid">
             <table class="table table-dark">
@@ -71,6 +123,10 @@
 </table>
 
     </div>
+
+     <br>
+    <br>
+    <br>
 
 <!--    Footer-->
     <footer>
